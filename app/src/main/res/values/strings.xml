@@ -14,4 +14,5 @@
     <string name="results">%1$d odpowiedzi, %2$.02f%% poprawnych</string>
     <string name="world_regions">Obszary</string>
     <string name="world_regions_description">Obszary których ma dotyczyć quiz</string>
+    <string name="title_activity_setting">Ustawienia</string>
 </resources>
