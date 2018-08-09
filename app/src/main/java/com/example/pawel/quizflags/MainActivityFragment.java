@@ -107,7 +107,7 @@ public class MainActivityFragment extends Fragment {
         random = new SecureRandom();
         handler = new Handler();
 
-        /* Inicjalizacja animacja */
+        /* Inicjalizacja animacji */
         shakeAnimation = AnimationUtils.loadAnimation(getActivity(), R.anim.incorrect_shake);
         shakeAnimation.setRepeatCount(3);
 
@@ -146,6 +146,7 @@ public class MainActivityFragment extends Fragment {
         String choices = sharedPreferences.getString(MainActivity.CHOICES, null);
         /* Liczba wierszy z przyciskami odpowiedzi do wyświetlenia */
         guessRows = Integer.parseInt(choices) /2;
+        System.out.println(guessRows);
 
         /* Ukrycie wszystkich wierszy z przyciskami */
         for (LinearLayout layout: guessLinearLayouts)
@@ -153,9 +154,8 @@ public class MainActivityFragment extends Fragment {
             layout.setVisibility(View.GONE);
         }
 
-
         /* Wyświetlenia określonej liczby wierszy z przyciskami odpowiedzi*/
-        for (int row=0; row >guessRows; row++)
+        for (int row=0; row <guessRows; row++)
         {
             guessLinearLayouts[row].setVisibility(View.VISIBLE);
         }
@@ -278,6 +278,7 @@ public class MainActivityFragment extends Fragment {
             {
                 /* Dostęp do przycisku i zmiana na enabled */
                 Button guessButton = (Button) guessLinearLayouts[row].getChildAt(column);
+                guessButton.setVisibility(View.VISIBLE);
                 guessButton.setEnabled(true);
 
                 /* Pobranie nazwy kraju i ustawienie jej w przycisku button */
